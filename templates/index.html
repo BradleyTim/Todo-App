@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Todos</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container text-center">
+		<header class="masthead mb-auto">
+			<h1 class="display-3 mb-5">Todos</h1>
+  		</header>
+  		<div style="width: 100%" class="mb-4">
+  			<form action="/add" method="POST" class="form-inline justify-content-center">
+		  		<div class="input-group mb-3">
+  					<input type="text" class="form-control" name="todoitem" placeholder="New Todo...">
+					  <div class="input-group-append">
+					    <button class="btn btn-outline-secondary" type="submit">Add Todo</button>
+					  </div>
+				</div>
+			</form>
+  		</div>
+		<div>
+			<ul class="list-group" >
+				{% for todo in todos %}
+					<li class="list-group-item" >{{ todo.content }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
